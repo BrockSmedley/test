@@ -1,0 +1,22 @@
+#!/bin/bash
+
+numfiles=$#
+echo $numfiles
+
+# pull current branch
+git pull
+
+# add files given in args
+for file in "$@"
+do
+  git add $file
+done
+
+# commit changes
+git commit -m "some random message"
+
+# one last pull
+git pull
+
+# push changes
+git push
